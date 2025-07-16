@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "LeetCode Assistant",
+    "version": "1.0",
+    "description": "Provides progressive, context-aware hints for LeetCode problems using OpenAI, with optional user-provided code.",
+    "permissions": [
+      "scripting",
+      "activeTab"
+    ],
+    "host_permissions": [
+      "https://leetcode.com/*"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://leetcode.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ]
+  }
+  
